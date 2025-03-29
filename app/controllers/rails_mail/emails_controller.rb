@@ -21,18 +21,6 @@ module RailsMail
 
       respond_to do |format|
         format.html
-        format.turbo_stream do
-          render turbo_stream: [
-              turbo_stream.replace(
-              "email_content",
-              partial: "rails_mail/emails/show",
-              locals: { email: @email }
-            ),
-            turbo_stream.replace("turbo_frame_url",
-              partial: "rails_mail/shared/turbo_frame_url",
-              locals: { url: email_path(@email) })
-          ]
-        end
       end
     end
 
