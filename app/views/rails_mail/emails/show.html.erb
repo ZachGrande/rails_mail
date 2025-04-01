@@ -35,8 +35,8 @@
         </div>
       <% end %>
 
-      <div class="prose max-w-none">
-        <%= simple_format @email.body %>
+      <div>
+        <%= render "email_tabs", email: email %>
       </div>
     </div>
   </div>
